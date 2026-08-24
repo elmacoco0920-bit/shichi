@@ -2,1651 +2,1236 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-
-    <!-- 手機版 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Aulia Tseng | Actress · Performer · Creator</title>
-
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Aira Tseng | Actress · Performer · Creator</title>
     <!-- =========================
          GOOGLE FONTS
          ========================= -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+          rel="stylesheet">
     <style>
-
         /* =====================================================
            01. COLOR SYSTEM
            ===================================================== */
-
         :root {
-
             --ivory: #F6F1E8;
             --cream: #FFFDF8;
             --beige: #DED3C3;
-
             --dusty-pink: #D6B5B2;
             --butter-yellow: #E9D69B;
-            /* 調整 Profile 色系，使其與整體溫暖質感融合 */
-            --warm-neutral: #EAE3D2;
-
+            /*
+            原本的綠色改成暖米杏色
+            與整體頁面更協調
+            */
+            --warm-sand: #E8DED0;
             --espresso: #403934;
-
             --white: #FFFFFF;
-
             --serif: "Playfair Display", Georgia, serif;
             --sans: "DM Sans", Arial, sans-serif;
         }
-
         /* =====================================================
            02. BASIC RESET
            ===================================================== */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
-
         body {
             background: var(--ivory);
             color: var(--espresso);
-
             font-family: var(--sans);
-
             line-height: 1.7;
-
             overflow-x: hidden;
         }
-
         img {
             width: 100%;
             display: block;
         }
-
         a {
             color: inherit;
             text-decoration: none;
         }
-
         /* =====================================================
            03. NAVIGATION
            ===================================================== */
-
         nav {
             position: fixed;
-
             top: 0;
             left: 0;
-
             width: 100%;
-
             z-index: 1000;
-
             padding: 22px 5%;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            background: rgba(246, 241, 232, 0.88);
-
+            background: rgba(246, 241, 232, 0.90);
             backdrop-filter: blur(12px);
-
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(64,57,52,0.08);
         }
-
         .logo {
             font-family: var(--serif);
-
             font-size: 20px;
-
             letter-spacing: 1px;
         }
-
         .nav-right {
             display: flex;
             align-items: center;
             gap: 35px;
         }
-
         .nav-links {
             display: flex;
             gap: 30px;
-
             font-size: 13px;
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
         }
-
         .nav-links a {
             position: relative;
-
             transition: 0.3s ease;
         }
-
         .nav-links a::after {
-
             content: "";
-
             position: absolute;
-
             left: 0;
             bottom: -6px;
-
             width: 0;
             height: 1px;
-
             background: var(--espresso);
-
             transition: 0.3s ease;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
+        .nav-links a:hover {
+            opacity: 0.65;
+        }
         /* Language button */
-
         .language {
-            border: 1px solid var(--espresso);
-
+            border: 1px solid rgba(64,57,52,0.35);
             background: transparent;
-
             color: var(--espresso);
-
             font-family: var(--sans);
-
             cursor: pointer;
-
             font-size: 11px;
-
-            padding: 4px 10px;
-
+            padding: 5px 10px;
             letter-spacing: 1px;
-
             transition: 0.3s ease;
         }
-
         .language:hover {
             background: var(--espresso);
             color: var(--cream);
         }
-
         /* =====================================================
            04. HERO
            ===================================================== */
-
         .hero {
-
             min-height: 100vh;
-
             padding: 130px 5% 70px;
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             align-items: center;
-
             gap: 7%;
         }
-
         .hero-image {
-
             width: 100%;
-
             aspect-ratio: 4 / 5;
-
             background:
                 linear-gradient(
                     145deg,
                     #E9D69B,
                     #D6B5B2
                 );
-
             overflow: hidden;
-
             position: relative;
         }
-
         .hero-image::after {
-
             content: "YOUR PHOTO";
-
             position: absolute;
-
             top: 50%;
             left: 50%;
-
             transform: translate(-50%, -50%);
-
             font-family: var(--serif);
-
             font-size: 18px;
-
             letter-spacing: 3px;
-
             opacity: 0.55;
         }
-
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
         .hero-text {
-
             padding-right: 5%;
         }
-
         .hero-small {
-
             font-size: 12px;
-
             letter-spacing: 4px;
-
             text-transform: uppercase;
-
             margin-bottom: 25px;
-
             opacity: 0.65;
         }
-
         .hero h1 {
-
             font-family: var(--serif);
-
             font-size: clamp(55px, 8vw, 105px);
-
             font-weight: 400;
-
             line-height: 0.95;
-
             letter-spacing: -3px;
-
             margin-bottom: 30px;
         }
-
         .hero-subtitle {
-
             font-size: 14px;
-
             letter-spacing: 2px;
-
             margin-bottom: 45px;
-
             opacity: 0.75;
         }
-
         .hero-button {
-
             display: inline-flex;
-
             align-items: center;
-
             gap: 15px;
-
             padding: 15px 25px;
-
             background: var(--espresso);
-
             color: var(--cream);
-
             font-size: 12px;
-
             letter-spacing: 2px;
-
             transition: 0.35s ease;
         }
-
         .hero-button:hover {
-
             background: var(--dusty-pink);
-
             color: var(--espresso);
-
             transform: translateY(-3px);
         }
-
         /* =====================================================
            05. SECTION BASIC
            ===================================================== */
-
         section {
-
             padding: 130px 7%;
         }
-
         .section-label {
-
             font-size: 11px;
-
             letter-spacing: 4px;
-
             text-transform: uppercase;
-
             opacity: 0.6;
-
             margin-bottom: 25px;
         }
-
         .section-title {
-
             font-family: var(--serif);
-
             font-weight: 400;
-
             font-size: clamp(40px, 5vw, 70px);
-
             line-height: 1.1;
-
             margin-bottom: 50px;
         }
-
         /* =====================================================
-           06. ABOUT PREVIEW
+           06. ABOUT
            ===================================================== */
-
         .about-preview {
-
             background: var(--cream);
-
             display: grid;
-
             grid-template-columns: 0.7fr 1.3fr;
-
             gap: 10%;
-
             align-items: start;
-
-            scroll-margin-top: 80px;
         }
-
         .about-text {
-
             max-width: 700px;
-
             font-size: 17px;
-
             line-height: 2;
         }
-
         .about-text p {
-
             margin-bottom: 25px;
         }
-
         .text-link {
-
             display: inline-block;
-
             margin-top: 15px;
-
             font-size: 12px;
-
             letter-spacing: 2px;
-
             border-bottom: 1px solid var(--espresso);
-
             padding-bottom: 5px;
         }
-
         /* =====================================================
            07. SHOWREEL
            ===================================================== */
-
         .showreel {
-
             background: var(--butter-yellow);
-
-            scroll-margin-top: 80px;
         }
-
         .video-container {
-
             width: 100%;
-
             aspect-ratio: 16 / 9;
-
             background: #292521;
-
             position: relative;
-
             overflow: hidden;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
         }
-
         .video-placeholder {
-
             color: var(--cream);
-
             text-align: center;
         }
-
         .video-placeholder span {
-
             display: block;
-
             font-family: var(--serif);
-
             font-size: 35px;
-
             margin-bottom: 10px;
         }
-
         .video-placeholder p {
-
             font-size: 11px;
-
             letter-spacing: 3px;
-
             opacity: 0.7;
         }
-
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         /* =====================================================
            08. WORKS
            ===================================================== */
-
         .works {
-
             background: var(--ivory);
-
-            scroll-margin-top: 80px;
         }
-
         .works-grid {
-
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
             gap: 80px 50px;
         }
-
         .work {
-
             cursor: pointer;
         }
-
         .work-image {
-
             aspect-ratio: 4 / 3;
-
             background: var(--beige);
-
             overflow: hidden;
-
             position: relative;
-
             margin-bottom: 22px;
         }
-
         .work-image::after {
-
             content: "WORK IMAGE";
-
             position: absolute;
-
             top: 50%;
             left: 50%;
-
             transform: translate(-50%, -50%);
-
             font-family: var(--serif);
-
             font-size: 16px;
-
             letter-spacing: 2px;
-
             opacity: 0.45;
         }
-
         .work-image img {
-
             height: 100%;
-
             object-fit: cover;
-
             transition: 0.6s ease;
+            position: relative;
+            z-index: 2;
         }
-
         .work:hover .work-image img {
-
             transform: scale(1.04);
         }
-
         .work-number {
-
             font-size: 10px;
-
             letter-spacing: 3px;
-
             opacity: 0.5;
-
             margin-bottom: 8px;
         }
-
         .work-title {
-
             font-family: var(--serif);
-
             font-size: 28px;
-
             margin-bottom: 5px;
         }
-
         .work-type {
-
             font-size: 11px;
-
             letter-spacing: 1.5px;
-
             opacity: 0.6;
-
             text-transform: uppercase;
         }
-
         /* =====================================================
            09. PROFILE
            ===================================================== */
-
         .profile {
-
-            background: var(--warm-neutral);
-
+            /*
+            改掉原本偏突兀的綠色
+            */
+            background: var(--warm-sand);
             color: var(--espresso);
-
-            scroll-margin-top: 80px;
         }
-
         .profile-grid {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 80px;
         }
-
         .profile-info {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 35px;
         }
-
         .profile-item {
-
-            border-top: 1px solid rgba(64,57,52,0.2);
-
+            border-top: 1px solid rgba(64,57,52,0.25);
             padding-top: 12px;
         }
-
         .profile-item span {
-
             display: block;
-
             font-size: 10px;
-
             letter-spacing: 2px;
-
             text-transform: uppercase;
-
             opacity: 0.6;
-
             margin-bottom: 7px;
         }
-
         .profile-item strong {
-
             font-weight: 400;
-
             font-size: 15px;
         }
-
         .skills {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 25px;
         }
-
         .skill {
-
-            border-top: 1px solid rgba(64,57,52,0.2);
-
+            border-top: 1px solid rgba(64,57,52,0.25);
             padding-top: 12px;
         }
-
         .skill strong {
-
             display: block;
-
             font-family: var(--serif);
-
             font-size: 20px;
-
             font-weight: 400;
-
             margin-bottom: 5px;
         }
-
         .skill span {
-
             font-size: 10px;
-
             letter-spacing: 1px;
-
             opacity: 0.65;
-
         }
-
         /* =====================================================
            10. ABOUT FULL
            ===================================================== */
-
         .about-full {
-
             background: var(--cream);
-
             max-width: 100%;
-
-            scroll-margin-top: 80px;
         }
-
         .about-content {
-
             max-width: 850px;
-
             margin: auto;
-
         }
-
         .about-content p {
-
             font-size: 18px;
-
             line-height: 2.1;
-
             margin-bottom: 28px;
-
         }
-
         .philosophy {
-
             margin-top: 70px;
-
             padding: 50px;
-
             background: var(--dusty-pink);
-
         }
-
         .philosophy h3 {
-
             font-family: var(--serif);
-
             font-size: 35px;
-
             font-weight: 400;
-
             margin-bottom: 20px;
-
         }
-
         /* =====================================================
            11. CONTACT
            ===================================================== */
-
         .contact {
-
             background: var(--espresso);
-
             color: var(--cream);
-
             text-align: center;
-
             padding: 150px 7%;
-
-            scroll-margin-top: 80px;
         }
-
         .contact .section-label {
-
             opacity: 0.55;
         }
-
         .contact h2 {
-
             font-family: var(--serif);
-
             font-size: clamp(45px, 7vw, 90px);
-
             font-weight: 400;
-
             line-height: 1;
-
             margin-bottom: 40px;
         }
-
         .email {
-
             font-size: 14px;
-
             letter-spacing: 1px;
-
             border-bottom: 1px solid rgba(255,255,255,0.5);
-
             padding-bottom: 8px;
-
             transition: 0.3s;
         }
-
         .email:hover {
-
             color: var(--butter-yellow);
-
             border-color: var(--butter-yellow);
         }
-
         /* =====================================================
            12. FOOTER
            ===================================================== */
-
         footer {
-
             background: var(--espresso);
-
             color: var(--cream);
-
             padding: 25px 7% 35px;
-
             display: flex;
-
             justify-content: space-between;
-
             font-size: 10px;
-
             letter-spacing: 1px;
-
             opacity: 0.8;
         }
-
         /* =====================================================
            13. SCROLL ANIMATION
            ===================================================== */
-
         .fade-in {
-
             opacity: 0;
-
             transform: translateY(30px);
-
-            transition: opacity 0.8s ease,
-                        transform 0.8s ease;
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
         }
-
         .fade-in.visible {
-
             opacity: 1;
-
             transform: translateY(0);
         }
-
         /* =====================================================
            14. MOBILE
            ===================================================== */
-
         @media (max-width: 800px) {
-
             nav {
-
                 padding: 18px 6%;
-
             }
-
             .nav-links {
-
                 gap: 15px;
-
                 font-size: 10px;
             }
-
             .nav-right {
-
                 gap: 15px;
             }
-
             .hero {
-
                 grid-template-columns: 1fr;
-
                 padding-top: 110px;
-
                 gap: 45px;
             }
-
             .hero-image {
-
                 order: 1;
             }
-
             .hero-text {
-
                 order: 2;
-
                 padding-right: 0;
             }
-
             .hero h1 {
-
                 font-size: 65px;
             }
-
             section {
-
                 padding: 90px 7%;
             }
-
             .about-preview {
-
                 grid-template-columns: 1fr;
-
                 gap: 30px;
             }
-
             .works-grid {
-
                 grid-template-columns: 1fr;
-
                 gap: 60px;
             }
-
             .profile-grid {
-
                 grid-template-columns: 1fr;
-
                 gap: 60px;
             }
-
             .profile-info {
-
                 gap: 25px;
             }
-
             .skills {
-
                 grid-template-columns: 1fr 1fr;
             }
-
             .philosophy {
-
                 padding: 30px;
             }
-
             footer {
-
                 flex-direction: column;
-
                 gap: 10px;
             }
         }
-
         /* =====================================================
-           VERY SMALL PHONES
+           15. VERY SMALL PHONES
            ===================================================== */
-
         @media (max-width: 480px) {
-
             .nav-links {
-
                 display: none;
             }
-
             .hero h1 {
-
                 font-size: 55px;
             }
-
             .profile-info {
-
                 grid-template-columns: 1fr;
             }
-
             .skills {
-
                 grid-template-columns: 1fr;
             }
-
         }
-
     </style>
 </head>
-
 <body>
-
 <!-- =========================================================
      NAVIGATION
      ========================================================= -->
-
 <nav>
-
-    <a href="#home" class="logo">
-        AULIA TSENG
+    <a href="#home"
+       class="logo">
+        AIRA TSENG
     </a>
-
     <div class="nav-right">
-
         <div class="nav-links">
-
-            <a href="#about" data-i18n="nav-about">About</a>
-
-            <a href="#showreel" data-i18n="nav-showreel">Showreel</a>
-
-            <a href="#works" data-i18n="nav-works">Works</a>
-
-            <a href="#profile" data-i18n="nav-profile">Profile</a>
-
-            <a href="#contact" data-i18n="nav-contact">Contact</a>
-
+            <a href="#about"
+               data-zh="關於我"
+               data-en="About">
+                關於我
+            </a>
+            <a href="#showreel"
+               data-zh="宣傳片"
+               data-en="Showreel">
+                宣傳片
+            </a>
+            <a href="#works"
+               data-zh="作品"
+               data-en="Works">
+                作品
+            </a>
+            <a href="#profile"
+               data-zh="個人資料"
+               data-en="Profile">
+                個人資料
+            </a>
+            <a href="#contact"
+               data-zh="聯絡"
+               data-en="Contact">
+                聯絡
+            </a>
         </div>
-
-        <button class="language" id="languageButton">
+        <button class="language"
+                id="languageButton"
+                aria-label="Switch language">
             EN
         </button>
-
     </div>
-
 </nav>
-
 <!-- =========================================================
      HOME / HERO
      ========================================================= -->
-
 <main id="home">
-
     <section class="hero">
-
-        <div class="hero-image"></div>
-
+        <!-- 未來放首頁照片 -->
+        <div class="hero-image">
+            <!--
+            <img src="images/aira-main.jpg"
+                 alt="Aira Tseng">
+            -->
+        </div>
         <div class="hero-text fade-in">
-
-            <div class="hero-small" data-i18n="hero-tag">
-                Actress · Performer · Creator
+            <div class="hero-small"
+                 data-zh="演員 · 表演者 · 創作者"
+                 data-en="Actress · Performer · Creator">
+                演員 · 表演者 · 創作者
             </div>
-
             <h1>
-                Aulia<br>
+                Aira<br>
                 Tseng
             </h1>
-
-            <div class="hero-subtitle" data-i18n="hero-sub">
+            <div class="hero-subtitle"
+                 data-zh="曾歆晴"
+                 data-en="Tseng Hsin-ching">
                 曾歆晴
             </div>
-
-            <a href="#showreel" class="hero-button">
-                <span data-i18n="hero-btn">WATCH SHOWREEL</span>
+            <a href="#showreel"
+               class="hero-button">
+                <span
+                    data-zh="觀看宣傳影片"
+                    data-en="WATCH SHOWREEL">
+                    觀看宣傳影片
+                </span>
                 <span>→</span>
             </a>
-
         </div>
-
     </section>
-
     <!-- =====================================================
-         ABOUT PREVIEW
+         ABOUT
          ===================================================== -->
-
-    <section class="about-preview" id="about">
-
+    <section class="about-preview"
+             id="about">
         <div>
-
-            <div class="section-label">
-                01 / About
+            <div class="section-label"
+                 data-zh="01 / 關於我"
+                 data-en="01 / About">
+                01 / 關於我
             </div>
-
-            <h2 class="section-title" data-i18n="about-title">
-                About<br>
-                Aulia
+            <h2 class="section-title"
+                data-zh="關於<br>Aira"
+                data-en="About<br>Aira">
+                關於<br>Aira
             </h2>
-
         </div>
-
         <div class="about-text fade-in">
-
-            <p data-i18n="about-p1">
+            <p
+                data-zh="我是曾歆晴，一名夢想成為演員的表演者。"
+                data-en="I am Aira Tseng, a performer pursuing my dream of becoming an actress.">
                 我是曾歆晴，一名夢想成為演員的表演者。
             </p>
-
-            <p data-i18n="about-p2">
-                我喜歡演戲，是因為希望能在短暫的人生裡，體驗不同的人生活法。透過與角色的共振，我試著理解並傳達角色的情感。
+            <p
+                data-zh="我喜歡演戲，是因為希望能在短暫的人生裡，體驗不同的人生活法。透過與角色的共振，我試著理解並傳達角色的情感。"
+                data-en="I love acting because it allows me to experience different ways of living within one brief lifetime. By connecting with each character, I try to understand and convey their emotions.">
+                我喜歡演戲，是因為希望能在短暫的人生裡，
+                體驗不同的人生活法。透過與角色的共振，
+                我試著理解並傳達角色的情感。
             </p>
-
-            <p data-i18n="about-p3">
-                我喜歡有故事感的角色，也享受在閱讀劇本時逐漸與角色產生連結。
+            <p
+                data-zh="我喜歡有故事感的角色，也享受在閱讀劇本時逐漸與角色產生連結。"
+                data-en="I am drawn to characters with stories and depth, and I enjoy gradually building a connection with them while reading a script.">
+                我喜歡有故事感的角色，也享受在閱讀劇本時
+                逐漸與角色產生連結。
             </p>
-
-            <p data-i18n="about-p4">
-                希望我的表演能讓觀眾感受到療癒，或得到一些啟發。
+            <p
+                data-zh="希望我的表演能讓觀眾感受到療癒，或得到一些啟發。"
+                data-en="I hope my performances can bring comfort, healing, or inspiration to the audience.">
+                希望我的表演能讓觀眾感受到療癒，
+                或得到一些啟發。
             </p>
-
-            <a href="#about-full" class="text-link" data-i18n="read-more">
-                READ MORE →
+            <a href="#about-full"
+               class="text-link"
+               data-zh="閱讀完整介紹 →"
+               data-en="READ MORE →">
+                閱讀完整介紹 →
             </a>
-
         </div>
-
     </section>
-
     <!-- =====================================================
          SHOWREEL
          ===================================================== -->
-
-    <section class="showreel" id="showreel">
-
-        <div class="section-label">
-            02 / Showreel
+    <section class="showreel"
+             id="showreel">
+        <div class="section-label"
+             data-zh="02 / 宣傳片"
+             data-en="02 / Showreel">
+            02 / 宣傳片
         </div>
-
-        <h2 class="section-title">
-            Showreel
+        <h2 class="section-title"
+            data-zh="宣傳片"
+            data-en="Showreel">
+            宣傳片
         </h2>
-
         <div class="video-container">
-
+            <!-- 未來加入影片時可以把 placeholder 換成 video -->
+            <!--
+            <video controls
+                   poster="images/showreel-cover.jpg">
+                <source
+                    src="videos/aira-showreel.mp4"
+                    type="video/mp4">
+            </video>
+            -->
             <div class="video-placeholder">
-
                 <span>▶</span>
-
                 <p>
-                    AULIA TSENG · SHOWREEL
+                    AIRA TSENG · SHOWREEL
                 </p>
-
             </div>
-
         </div>
-
     </section>
-
     <!-- =====================================================
          WORKS
          ===================================================== -->
-
-    <section class="works" id="works">
-
-        <div class="section-label">
-            03 / Selected Works
+    <section class="works"
+             id="works">
+        <div class="section-label"
+             data-zh="03 / 作品"
+             data-en="03 / Selected Works">
+            03 / 作品
         </div>
-
-        <h2 class="section-title" data-i18n="works-title">
-            Selected<br>
-            Works
+        <h2 class="section-title"
+            data-zh="作品<br>Selected Works"
+            data-en="Selected<br>Works">
+            作品<br>Selected Works
         </h2>
-
         <div class="works-grid">
-
             <!-- WORK 01 -->
-
             <article class="work fade-in">
-
-                <div class="work-image"></div>
-
+                <div class="work-image">
+                    <!--
+                    <img
+                        src="images/huijing.jpg"
+                        alt="迴映">
+                    -->
+                </div>
                 <div class="work-number">
                     01 / 03
                 </div>
-
-                <h3 class="work-title" data-i18n="work1-title">
+                <h3 class="work-title"
+                    data-zh="《迴映》"
+                    data-en="Echoes of Time">
                     《迴映》
                 </h3>
-
-                <div class="work-type" data-i18n="work1-type">
-                    Stage Play · 2025
+                <div class="work-type"
+                     data-zh="舞台劇 · 2025"
+                     data-en="Stage Play · 2025">
+                    舞台劇 · 2025
                 </div>
-
             </article>
-
             <!-- WORK 02 -->
-
             <article class="work fade-in">
-
-                <div class="work-image"></div>
-
+                <div class="work-image">
+                    <!--
+                    <img
+                        src="images/fengguo.jpg"
+                        alt="風吹過的記憶">
+                    -->
+                </div>
                 <div class="work-number">
                     02 / 03
                 </div>
-
-                <h3 class="work-title" data-i18n="work2-title">
+                <h3 class="work-title"
+                    data-zh="《風吹過的記憶》"
+                    data-en="Memories in the Wind">
                     《風吹過的記憶》
                 </h3>
-
-                <div class="work-type" data-i18n="work2-type">
-                    Short Film · 2025
+                <div class="work-type"
+                     data-zh="微電影短片 · 2025"
+                     data-en="Short Film · 2025">
+                    微電影短片 · 2025
                 </div>
-
             </article>
-
             <!-- WORK 03 -->
-
             <article class="work fade-in">
-
-                <div class="work-image"></div>
-
+                <div class="work-image">
+                    <!--
+                    <img
+                        src="images/yinian.jpg"
+                        alt="亦念之間">
+                    -->
+                </div>
                 <div class="work-number">
                     03 / 03
                 </div>
-
-                <h3 class="work-title" data-i18n="work3-title">
+                <h3 class="work-title"
+                    data-zh="《亦念之間》"
+                    data-en="Between Thoughts">
                     《亦念之間》
                 </h3>
-
-                <div class="work-type" data-i18n="work3-type">
-                    Short Film · 2025
+                <div class="work-type"
+                     data-zh="微電影短片 · 2025"
+                     data-en="Short Film · 2025">
+                    微電影短片 · 2025
                 </div>
-
             </article>
-
         </div>
-
     </section>
-
     <!-- =====================================================
          PROFILE
          ===================================================== -->
-
-    <section class="profile" id="profile">
-
-        <div class="section-label">
-            04 / Profile
+    <section class="profile"
+             id="profile">
+        <div class="section-label"
+             data-zh="04 / 個人資料"
+             data-en="04 / Profile">
+            04 / 個人資料
         </div>
-
-        <h2 class="section-title">
-            Profile
+        <h2 class="section-title"
+            data-zh="個人資料"
+            data-en="Profile">
+            個人資料
         </h2>
-
         <div class="profile-grid">
-
             <!-- BASIC INFO -->
-
             <div class="profile-info">
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-name">Name</span>
-
-                    <strong data-i18n="val-name">
-                        曾歆晴 / Aulia Tseng
+                    <span
+                        data-zh="姓名"
+                        data-en="Name">
+                        姓名
+                    </span>
+                    <strong
+                        data-zh="曾歆晴 / Aira Tseng"
+                        data-en="Aira Tseng / 曾歆晴">
+                        曾歆晴 / Aira Tseng
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-age">Playing Age</span>
-
+                    <span
+                        data-zh="演繹年齡"
+                        data-en="Playing Age">
+                        演繹年齡
+                    </span>
                     <strong>
                         18–22
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-height">Height</span>
-
+                    <span
+                        data-zh="身高"
+                        data-en="Height">
+                        身高
+                    </span>
                     <strong>
                         160 cm
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-hair">Hair</span>
-
-                    <strong data-i18n="val-hair">
-                        Black
+                    <span
+                        data-zh="髮色"
+                        data-en="Hair">
+                        髮色
+                    </span>
+                    <strong
+                        data-zh="黑色"
+                        data-en="Black">
+                        黑色
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-eyes">Eyes</span>
-
-                    <strong data-i18n="val-eyes">
-                        Black
+                    <span
+                        data-zh="瞳色"
+                        data-en="Eyes">
+                        瞳色
+                    </span>
+                    <strong
+                        data-zh="黑色"
+                        data-en="Black">
+                        黑色
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-location">Location</span>
-
-                    <strong data-i18n="val-location">
-                        Taiwan
+                    <span
+                        data-zh="所在地"
+                        data-en="Location">
+                        所在地
+                    </span>
+                    <strong
+                        data-zh="台灣"
+                        data-en="Taiwan">
+                        台灣
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-edu">Education</span>
-
-                    <strong data-i18n="val-edu">
-                        National Chengchi University
+                    <span
+                        data-zh="學歷"
+                        data-en="Education">
+                        學歷
+                    </span>
+                    <strong
+                        data-zh="國立政治大學"
+                        data-en="National Chengchi University">
+                        國立政治大學
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-major">Major</span>
-
-                    <strong data-i18n="val-major">
-                        College of Communication
+                    <span
+                        data-zh="主修"
+                        data-en="Major">
+                        主修
+                    </span>
+                    <strong
+                        data-zh="傳播學院"
+                        data-en="College of Communication">
+                        傳播學院
                     </strong>
-
                 </div>
-
                 <div class="profile-item">
-
-                    <span data-i18n="lbl-lang">Languages</span>
-
-                    <strong data-i18n="val-lang">
-                        Mandarin · English · Korean
+                    <span
+                        data-zh="語言"
+                        data-en="Languages">
+                        語言
+                    </span>
+                    <strong
+                        data-zh="中文 · 英文 · 韓文"
+                        data-en="Mandarin · English · Korean">
+                        中文 · 英文 · 韓文
                     </strong>
-
                 </div>
-
             </div>
-
             <!-- SKILLS -->
-
             <div>
-
-                <div class="section-label" data-i18n="lbl-skills">
-                    Skills
+                <div class="section-label"
+                     data-zh="專長技能"
+                     data-en="Skills">
+                    專長技能
                 </div>
-
                 <div class="skills">
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-acting">
-                            Acting
+                        <strong
+                            data-zh="表演"
+                            data-en="Acting">
+                            表演
                         </strong>
-
                         <span>
                             FILM · STAGE · MICRO FILM
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-writing">
-                            Writing
+                        <strong
+                            data-zh="編劇"
+                            data-en="Writing">
+                            編劇
                         </strong>
-
                         <span>
                             SCREENWRITING · STAGE PLAY
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-directing">
-                            Directing
+                        <strong
+                            data-zh="導演"
+                            data-en="Directing">
+                            導演
                         </strong>
-
                         <span>
                             MICRO FILM
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-editing">
-                            Editing
+                        <strong
+                            data-zh="剪輯"
+                            data-en="Editing">
+                            剪輯
                         </strong>
-
                         <span>
                             VIDEO EDITING
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-hosting">
-                            Hosting
+                        <strong
+                            data-zh="主持"
+                            data-en="Hosting">
+                            主持
                         </strong>
-
                         <span>
                             EVENT · PRESENTATION
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-dance">
-                            Dance
+                        <strong
+                            data-zh="舞蹈"
+                            data-en="Dance">
+                            舞蹈
                         </strong>
-
                         <span>
                             K-POP · HOBBY
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-vocal">
-                            Vocal
+                        <strong
+                            data-zh="歌唱"
+                            data-en="Vocal">
+                            歌唱
                         </strong>
-
                         <span>
                             SINGING · HOBBY
                         </span>
-
                     </div>
-
                     <div class="skill">
-
-                        <strong data-i18n="sk-other">
-                            Other
+                        <strong
+                            data-zh="其他"
+                            data-en="Other">
+                            其他
                         </strong>
-
-                        <span data-i18n="sk-baking">
-                            BAKING
+                        <span
+                            data-zh="烘焙"
+                            data-en="BAKING">
+                            烘焙
                         </span>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
     <!-- =====================================================
          FULL ABOUT
          ===================================================== -->
-
-    <section class="about-full" id="about-full">
-
+    <section class="about-full"
+             id="about-full">
         <div class="about-content">
-
-            <div class="section-label">
-                About Aulia
+            <div class="section-label"
+                 data-zh="關於 Aira"
+                 data-en="About Aira">
+                關於 Aira
             </div>
-
-            <h2 class="section-title" data-i18n="phil-title">
-                Acting<br>
-                Philosophy
+            <h2 class="section-title"
+                data-zh="表演<br>理念"
+                data-en="Acting<br>Philosophy">
+                表演<br>理念
             </h2>
-
-            <p data-i18n="about-p1">
+            <p
+                data-zh="我是曾歆晴，一名夢想成為演員的表演者。"
+                data-en="I am Aira Tseng, a performer pursuing my dream of becoming an actress.">
                 我是曾歆晴，一名夢想成為演員的表演者。
             </p>
-
-            <p data-i18n="about-p2">
-                我喜歡演戲，是因為希望能在短暫的人生裡，體驗不同的人生活法。透過與角色的共振，我試著理解並傳達角色的情感。
+            <p
+                data-zh="我喜歡演戲，是因為希望能在短暫的人生裡，體驗不同的人生活法。透過與角色的共振，我試著理解並傳達角色的情感。"
+                data-en="I love acting because it allows me to experience different ways of living within one brief lifetime. By connecting with each character, I try to understand and convey their emotions.">
+                我喜歡演戲，是因為希望能在短暫的人生裡，
+                體驗不同的人生活法。透過與角色的共振，
+                我試著理解並傳達角色的情感。
             </p>
-
-            <p data-i18n="about-p3">
-                我喜歡有故事感的角色，也享受在閱讀劇本時逐漸與角色產生連結。
+            <p
+                data-zh="我喜歡有故事感的角色，也享受在閱讀劇本時逐漸與角色產生連結。"
+                data-en="I am drawn to characters with stories and depth, and I enjoy gradually building a connection with them while reading a script.">
+                我喜歡有故事感的角色，也享受在閱讀劇本時
+                逐漸與角色產生連結。
             </p>
-
-            <p data-i18n="about-p4">
-                希望我的表演能讓觀眾感受到療癒，或得到一些啟發。
+            <p
+                data-zh="希望我的表演能讓觀眾感受到療癒，或得到一些啟發。"
+                data-en="I hope my performances can bring comfort, healing, or inspiration to the audience.">
+                希望我的表演能讓觀眾感受到療癒，
+                或得到一些啟發。
             </p>
-
             <div class="philosophy">
-
-                <div class="section-label">
-                    Personal Quote
+                <div class="section-label"
+                     data-zh="個人座右銘"
+                     data-en="Personal Quote">
+                    個人座右銘
                 </div>
-
-                <h3 data-i18n="motto-title">
-                    Your motto will be here.
+                <h3
+                    data-zh="你的座右銘將會放在這裡。"
+                    data-en="Your motto will be here.">
+                    你的座右銘將會放在這裡。
                 </h3>
-
-                <p data-i18n="motto-desc">
+                <p
+                    data-zh="這裡暫時保留給未來的你。"
+                    data-en="Reserved for your future quote.">
                     這裡暫時保留給未來的你。
                 </p>
-
             </div>
-
         </div>
-
     </section>
-
     <!-- =====================================================
          CONTACT
          ===================================================== -->
-
-    <section class="contact" id="contact">
-
-        <div class="section-label">
-            Contact
+    <section class="contact"
+             id="contact">
+        <div class="section-label"
+             data-zh="聯絡"
+             data-en="Contact">
+            聯絡
         </div>
-
-        <h2 data-i18n="contact-title">
-            Let's Work<br>
-            Together.
+        <h2
+            data-zh="一起創造<br>好的作品。"
+            data-en="Let's Work<br>Together.">
+            一起創造<br>好的作品。
         </h2>
-
-        <p style="margin-bottom: 30px;" data-i18n="contact-sub">
-            For Casting & Collaboration
+        <p
+            style="margin-bottom: 30px;"
+            data-zh="演出邀約與合作"
+            data-en="For Casting & Collaboration">
+            演出邀約與合作
         </p>
-
         <a
             href="mailto:elmacoco0920@gmail.com"
             class="email">
-
             elmacoco0920@gmail.com
-
         </a>
-
     </section>
-
 </main>
-
 <!-- =========================================================
      FOOTER
      ========================================================= -->
-
 <footer>
-
     <div>
-        © 2026 Aulia Tseng
+        © 2026 Aira Tseng
     </div>
-
-    <div data-i18n="hero-tag">
-        Actress · Performer · Creator
+    <div
+        data-zh="演員 · 表演者 · 創作者"
+        data-en="Actress · Performer · Creator">
+        演員 · 表演者 · 創作者
     </div>
-
 </footer>
-
 <!-- =========================================================
      JAVASCRIPT
      ========================================================= -->
-
 <script>
-
     /* =====================================================
-       FADE IN ANIMATION
+       01. FADE IN ANIMATION
        ===================================================== */
-
-    const fadeElements = document.querySelectorAll(".fade-in");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        },
-        { threshold: 0.15 }
-    );
-
+    const fadeElements =
+        document.querySelectorAll(".fade-in");
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            },
+            {
+                threshold: 0.15
+            }
+        );
     fadeElements.forEach((element) => {
         observer.observe(element);
     });
-
     /* =====================================================
-       LANGUAGE DICTIONARY & TOGGLE LOGIC
+       02. LANGUAGE SWITCH
        ===================================================== */
-
-    const translations = {
-        zh: {
-            "nav-about": "關於我",
-            "nav-showreel": "宣傳片",
-            "nav-works": "作品集",
-            "nav-profile": "個人資料",
-            "nav-contact": "聯絡我",
-            "hero-tag": "Actress · Performer · Creator",
-            "hero-sub": "曾歆晴",
-            "hero-btn": "觀看宣傳影片",
-            "about-title": "About<br>Aulia",
-            "about-p1": "我是曾歆晴，一名夢想成為演員的表演者。",
-            "about-p2": "我喜歡演戲，是因為希望能在短暫的人生裡，體驗不同的人生活法。透過與角色的共振，我試著理解並傳達角色的情感。",
-            "about-p3": "我喜歡有故事感的角色，也享受在閱讀劇本時逐漸與角色產生連結。",
-            "about-p4": "希望我的表演能讓觀眾感受到療癒，或得到一些啟發。",
-            "read-more": "閱讀更多 →",
-            "works-title": "Selected<br>Works",
-            "work1-title": "《迴映》",
-            "work1-type": "舞台劇 · 2025",
-            "work2-title": "《風吹過的記憶》",
-            "work2-type": "微電影短片 · 2025",
-            "work3-title": "《亦念之間》",
-            "work3-type": "微電影短片 · 2025",
-            "lbl-name": "姓名",
-            "val-name": "曾歆晴 / Aulia Tseng",
-            "lbl-age": "演繹年齡",
-            "lbl-height": "身高",
-            "lbl-hair": "髮色",
-            "val-hair": "黑色",
-            "lbl-eyes": "瞳色",
-            "val-eyes": "黑色",
-            "lbl-location": "所在地",
-            "val-location": "台灣",
-            "lbl-edu": "學歷",
-            "val-edu": "國立政治大學",
-            "lbl-major": "主修",
-            "val-major": "傳播學院",
-            "lbl-lang": "語言",
-            "val-lang": "中文 · 英文 · 韓文",
-            "lbl-skills": "專長技能",
-            "sk-acting": "表演",
-            "sk-writing": "編劇",
-            "sk-directing": "導演",
-            "sk-editing": "剪輯",
-            "sk-hosting": "主持",
-            "sk-dance": "舞蹈",
-            "sk-vocal": "歌唱",
-            "sk-other": "其他",
-            "sk-baking": "烘焙",
-            "phil-title": "Acting<br>Philosophy",
-            "motto-title": "Your motto will be here.",
-            "motto-desc": "這裡暫時保留給未來的你。",
-            "contact-title": "Let's Work<br>Together.",
-            "contact-sub": "合作與選角邀約"
-        },
-        en: {
-            "nav-about": "About",
-            "nav-showreel": "Showreel",
-            "nav-works": "Works",
-            "nav-profile": "Profile",
-            "nav-contact": "Contact",
-            "hero-tag": "Actress · Performer · Creator",
-            "hero-sub": "Tseng Hsin-ching",
-            "hero-btn": "WATCH SHOWREEL",
-            "about-title": "About<br>Aulia",
-            "about-p1": "I am Aulia Tseng, a performer pursuing her passion for acting.",
-            "about-p2": "I love acting because it allows me to experience different lives within this brief lifespan. Through resonating with each character, I strive to understand and convey their true emotions.",
-            "about-p3": "I am drawn to characters with depth and rich backstories, and I treasure the creative process of connecting with a role while reading script.",
-            "about-p4": "I hope my performances can bring comfort, healing, or inspiration to the audience.",
-            "read-more": "READ MORE →",
-            "works-title": "Selected<br>Works",
-            "work1-title": "Echoes of Time",
-            "work1-type": "Stage Play · 2025",
-            "work2-title": "Memories in the Wind",
-            "work2-type": "Short Film · 2025",
-            "work3-title": "Between Thoughts",
-            "work3-type": "Short Film · 2025",
-            "lbl-name": "Name",
-            "val-name": "Aulia Tseng / 曾歆晴",
-            "lbl-age": "Playing Age",
-            "lbl-height": "Height",
-            "lbl-hair": "Hair",
-            "val-hair": "Black",
-            "lbl-eyes": "Eyes",
-            "val-eyes": "Black",
-            "lbl-location": "Location",
-            "val-location": "Taiwan",
-            "lbl-edu": "Education",
-            "val-edu": "National Chengchi University",
-            "lbl-major": "Major",
-            "val-major": "College of Communication",
-            "lbl-lang": "Languages",
-            "val-lang": "Mandarin · English · Korean",
-            "lbl-skills": "Skills",
-            "sk-acting": "Acting",
-            "sk-writing": "Writing",
-            "sk-directing": "Directing",
-            "sk-editing": "Editing",
-            "sk-hosting": "Hosting",
-            "sk-dance": "Dance",
-            "sk-vocal": "Vocal",
-            "sk-other": "Other",
-            "sk-baking": "BAKING",
-            "phil-title": "Acting<br>Philosophy",
-            "motto-title": "Your motto will be here.",
-            "motto-desc": "Reserved for your future quote.",
-            "contact-title": "Let's Work<br>Together.",
-            "contact-sub": "For Casting & Collaboration"
-        }
-    };
-
-    const languageButton = document.getElementById("languageButton");
-    let currentLang = "zh";
-
-    languageButton.addEventListener("click", () => {
-        currentLang = currentLang === "zh" ? "en" : "zh";
-        languageButton.textContent = currentLang === "zh" ? "EN" : "中";
-
-        document.querySelectorAll("[data-i18n]").forEach((element) => {
-            const key = element.getAttribute("data-i18n");
-            if (translations[currentLang][key]) {
-                element.innerHTML = translations[currentLang][key];
+    const languageButton =
+        document.getElementById("languageButton");
+    let currentLanguage = "zh";
+    function changeLanguage(language) {
+        currentLanguage = language;
+        /*
+        修改 HTML 語言
+        */
+        document.documentElement.lang =
+            language === "zh"
+                ? "zh-TW"
+                : "en";
+        /*
+        修改所有有 data-zh / data-en 的元素
+        */
+        document
+            .querySelectorAll("[data-zh][data-en]")
+            .forEach((element) => {
+                const text =
+                    language === "zh"
+                        ? element.getAttribute("data-zh")
+                        : element.getAttribute("data-en");
+                /*
+                innerHTML 是為了支援
+                <br> 換行
+                */
+                element.innerHTML = text;
+            });
+        /*
+        按鈕顯示「下一個可以切換到的語言」
+        中文頁面 → 顯示 EN
+        英文頁面 → 顯示 中
+        */
+        languageButton.textContent =
+            language === "zh"
+                ? "EN"
+                : "中";
+        /*
+        修改網站標題
+        */
+        document.title =
+            language === "zh"
+                ? "Aira Tseng | 演員 · 表演者 · 創作者"
+                : "Aira Tseng | Actress · Performer · Creator";
+    }
+    /*
+    點擊按鈕後真正切換語言
+    */
+    languageButton.addEventListener(
+        "click",
+        () => {
+            if (currentLanguage === "zh") {
+                changeLanguage("en");
+            } else {
+                changeLanguage("zh");
             }
-        });
-    });
-
+        }
+    );
+    /* =====================================================
+       03. INITIAL LANGUAGE
+       ===================================================== */
+    changeLanguage("zh");
 </script>
-
 </body>
 </html>
